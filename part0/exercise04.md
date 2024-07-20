@@ -1,3 +1,6 @@
+Exercise 0.4: Nuevo diagrama de nota
+En el capítulo Cargando una página que contiene JavaScript - revisión la cadena de eventos causada al abrir la página https://studies.cs.helsinki.fi/exampleapp/notes se representa como un diagrama de secuencia
+
 ```mermaid
 sequenceDiagram
     participant browser
