@@ -37,3 +37,8 @@ sequenceDiagram
     activate server
     server-->>browser: the CSS file
     deactivate server
+
+    browser->>server: GET https://fonts.gstatic.com/s/lato/v24/S6uyw4BMUTPHjx4wXiWtFCc.woff2
+    activate server
+    server-->>browser: Font file
+    deactivate server
