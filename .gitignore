@@ -24,8 +24,8 @@ mono_crash.*
 x64/
 x86/
 [Ww][Ii][Nn]32/
-[Aa][Rr][Mm]/
-[Aa][Rr][Mm]64/
+[Aa][Rr]Mm/
+[Aa][Rr]Mm64/
 bld/
 [Bb]in/
 [Oo]bj/
@@ -295,13 +295,10 @@ node_modules/
 *.vbw
 
 # Visual Studio 6 auto-generated project file (contains which files were open etc.)
-*.vbp
-
-# Visual Studio 6 workspace and project file (working project files containing files to include in project)
 *.dsw
 *.dsp
 
-# Visual Studio 6 technical files
+# Visual Studio 6 workspace and project file (working project files containing files to include in project)
 *.ncb
 *.aps
 
@@ -378,6 +375,7 @@ FodyWeavers.xsd
 
 # VS Code files for those working on multiple tools
 .vscode/*
+!.vscode/extensions.json
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
@@ -396,3 +394,12 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+
+# Vite-generated
+node_modules/
+dist/
+logs/
+*.log
+.vscode/
+.idea/
