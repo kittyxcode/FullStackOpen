@@ -6,9 +6,9 @@ const Tittle = ({text}) =>{
   )
 }
 
-const Button = ({text}) => {
+const Button = ({text, handleClick}) => {
   return(
-    <button>{text}</button>
+    <button onClick={handleClick}>{text}</button>
   )
 }
 
@@ -24,12 +24,24 @@ const App = () => {
   const [neutral, setNeutral] = useState(0)
   const [bad, setBad] = useState(0)
 
+  const handlerCountGoodReviews= ()=>{
+    setGood(good + 1)
+  }
+
+  const handlerCountNeutralReviews= ()=>{
+    setNeutral(neutral + 1)
+  }
+
+  const handlerCountBadReviews= ()=>{
+    setBad(bad + 1)
+  }
+
   return (
     <div>
       <Tittle text='give feedback'/>
-      <Button text='good'/>
-      <Button text='neutral'/>
-      <Button text='bad'/>
+      <Button text='good' handleClick = {handlerCountGoodReviews}/>
+      <Button text='neutral' handleClick ={handlerCountNeutralReviews}/>
+      <Button text='bad' handleClick={handlerCountBadReviews}/>
       <Tittle text='stadistics'/>
       <ShowTextCount text='good' number={good}/>
       <ShowTextCount text='neutral' number={neutral}/>
