@@ -14,7 +14,20 @@ const Button = ({text, handleClick}) => {
 
 const ShowTextCount = ({text, number})=>{
   return(
-    <p>{text} {number}</p>
+    <p>{text}: {number}</p>
+  )
+}
+
+const ShowCalculeFields = ({good, neutral, bad})=>{
+  const all = good + neutral + bad
+  const average = (good * 1 + neutral * 0 + bad * -1) / all
+  const positive = (good / all) * 100
+  return(
+    <>
+      <p>all: {all} </p>
+      <p>average: {average}</p>
+      <p>postives: {positive}%</p>
+    </>
   )
 }
 
@@ -24,15 +37,15 @@ const App = () => {
   const [neutral, setNeutral] = useState(0)
   const [bad, setBad] = useState(0)
 
-  const handlerCountGoodReviews= ()=>{
+  const handlerCountGoodReviews = ()=>{
     setGood(good + 1)
   }
 
-  const handlerCountNeutralReviews= ()=>{
+  const handlerCountNeutralReviews = ()=>{
     setNeutral(neutral + 1)
   }
 
-  const handlerCountBadReviews= ()=>{
+  const handlerCountBadReviews = ()=>{
     setBad(bad + 1)
   }
 
@@ -46,6 +59,7 @@ const App = () => {
       <ShowTextCount text='good' number={good}/>
       <ShowTextCount text='neutral' number={neutral}/>
       <ShowTextCount text='bad' number={bad}/>
+      <ShowCalculeFields good={good} neutral={neutral} bad={bad}/>
     </div>
 
   )
