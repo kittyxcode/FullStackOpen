@@ -12,18 +12,16 @@ const Button = ({text, handleClick}) => {
   )
 }
 
-const ShowTextCount = ({text, number})=>{
-  return(
-    <p>{text}: {number}</p>
-  )
-}
-
-const ShowCalculeFields = ({good, neutral, bad})=>{
+const Stadistics = ({good, neutral, bad})=>{
   const all = good + neutral + bad
   const average = (good * 1 + neutral * 0 + bad * -1) / all
   const positive = (good / all) * 100
   return(
     <>
+      <Tittle text='Stadistics'></Tittle>
+      <p>good: {good} </p>
+      <p>neutral: {neutral}</p>
+      <p>bad: {bad}</p>
       <p>all: {all} </p>
       <p>average: {average}</p>
       <p>postives: {positive}%</p>
@@ -51,15 +49,11 @@ const App = () => {
 
   return (
     <div>
-      <Tittle text='give feedback'/>
-      <Button text='good' handleClick = {handlerCountGoodReviews}/>
-      <Button text='neutral' handleClick ={handlerCountNeutralReviews}/>
-      <Button text='bad' handleClick={handlerCountBadReviews}/>
-      <Tittle text='stadistics'/>
-      <ShowTextCount text='good' number={good}/>
-      <ShowTextCount text='neutral' number={neutral}/>
-      <ShowTextCount text='bad' number={bad}/>
-      <ShowCalculeFields good={good} neutral={neutral} bad={bad}/>
+      <Tittle text='Give feedback'/>
+      <Button text='Good' handleClick = {handlerCountGoodReviews}/>
+      <Button text='Neutral' handleClick ={handlerCountNeutralReviews}/>
+      <Button text='Bad' handleClick={handlerCountBadReviews}/>
+      <Stadistics good={good} neutral={neutral} bad={bad}/>
     </div>
 
   )
