@@ -20,12 +20,12 @@ const Stadistics = ({good, neutral, bad})=>{
     return(
       <>
         <Tittle text='Stadistics'></Tittle>
-        <p>good: {good} </p>
-        <p>neutral: {neutral}</p>
-        <p>bad: {bad}</p>
-        <p>all: {all} </p>
-        <p>average: {average}</p>
-        <p>postives: {positive}%</p>
+        <StatisdicLine text='good' number={good}/>
+        <StatisdicLine text='neutral' number={neutral}/>
+        <StatisdicLine text='bad' number={bad}/>
+        <StatisdicLine text='all' number={all}/>
+        <StatisdicLine text="average" number={`${average.toFixed(1)}%`} />
+        <StatisdicLine text="positives" number={`${positive.toFixed(1)}%`} />
       </>
     )
   }
@@ -36,7 +36,15 @@ const Stadistics = ({good, neutral, bad})=>{
       </>
     )
   }
-  
+}
+
+const StatisdicLine = ({text, number}) =>{
+  return(
+    <>
+      <p>{text}: {number}</p>
+    </>
+  )
+
 }
 
 const App = () => {
