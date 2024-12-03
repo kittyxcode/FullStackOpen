@@ -19,13 +19,36 @@ const Stadistics = ({good, neutral, bad})=>{
   if(all > 0){
     return(
       <>
-        <Tittle text='Stadistics'></Tittle>
-        <StatisdicLine text='good' number={good}/>
-        <StatisdicLine text='neutral' number={neutral}/>
-        <StatisdicLine text='bad' number={bad}/>
-        <StatisdicLine text='all' number={all}/>
-        <StatisdicLine text="average" number={`${average.toFixed(1)}%`} />
-        <StatisdicLine text="positives" number={`${positive.toFixed(1)}%`} />
+        <table>
+          {/* Tittle como encabezado */}
+          <thead>
+            <tr>
+              <th colSpan="2">
+                <Tittle text="Statistics" />
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <StatisdicLine text="Good" number={good} />
+            </tr>
+            <tr>
+              <StatisdicLine text="Neutral" number={neutral} />
+            </tr>
+            <tr>
+              <StatisdicLine text="Bad" number={bad} />
+            </tr>
+            <tr>
+              <StatisdicLine text="All" number={all} />
+            </tr>
+            <tr>
+              <StatisdicLine text="Average" number={`${average.toFixed(1)}%`} />
+            </tr>
+            <tr>
+              <StatisdicLine text="Positives" number={`${positive.toFixed(1)}%`} />
+            </tr>
+          </tbody>
+        </table>  
       </>
     )
   }
@@ -41,7 +64,8 @@ const Stadistics = ({good, neutral, bad})=>{
 const StatisdicLine = ({text, number}) =>{
   return(
     <>
-      <p>{text}: {number}</p>
+      <td>{text}</td>
+      <td>{number}</td>
     </>
   )
 
