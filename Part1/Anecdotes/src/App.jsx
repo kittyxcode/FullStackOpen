@@ -14,24 +14,29 @@ const App = () => {
 
   const [selected, setSelected] = useState(0)
 
-  
-  
+  const generateRandomNumber = () => {
+    return Math.floor(Math.random() * anecdotes.length)
+  }
+
+  const changeAnecdote = () => {
+    setSelected(generateRandomNumber())
+  }
 
   return (
     <div>
       {anecdotes[selected]}
       <br></br>
-      <Button text='next anecdote'/>
+      <Button text='next anecdote' handlerClick={changeAnecdote}/>
     </div>
   )
 }
 
-const Button =({text, handleClick})=>{
-  return(
-    <>
-      <button onClick={handleClick}>{text}</button>
-    </>
-  )
-}
+const Button = ({ text, handlerClick }) => {
+  return (
+    <button onClick={handlerClick}>{text}</button>
+  );
+};
+
+
 
 export default App

@@ -33,6 +33,8 @@ export default [
         'warn',
         { allowConstantExport: true },
       ],
+      "space-infix-ops": ["error", { "int32Hint": false }],
+      'react/prop-types': 0
     },
   },
 ]
