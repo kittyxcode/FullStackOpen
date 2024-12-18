@@ -14,10 +14,23 @@ const App = () => {
 
   const [selected, setSelected] = useState(0)
 
+  
+  
+
   return (
     <div>
       {anecdotes[selected]}
+      <br></br>
+      <Button text='next anecdote'/>
     </div>
+  )
+}
+
+const Button =({text, handleClick})=>{
+  return(
+    <>
+      <button onClick={handleClick}>{text}</button>
+    </>
   )
 }
 
