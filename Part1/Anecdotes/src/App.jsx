@@ -31,10 +31,13 @@ const App = () => {
 
   return (
     <div>
+      <Title text='Anecdote of the day'/>
       {anecdotes[selected]}
       <br></br>
+      <ShowVotes votes={votes[selected]}/>
       <Button text='vote' handlerClick={addVote}/>
       <Button text='next anecdote' handlerClick={changeAnecdote}/>
+      <Title text='Anecdote with most votes'/>
     </div>
   )
 }
@@ -44,6 +47,19 @@ const Button = ({ text, handlerClick }) => {
     <button onClick={handlerClick}>{text}</button>
   );
 };
+
+const Title = ({text}) => {
+  return (
+    <h1>{text}</h1>
+  );
+}
+
+const ShowVotes = ({votes}) => {
+  return (
+    <p>has {votes} votes</p>
+  );
+}
+
 
 
 
