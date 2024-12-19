@@ -38,6 +38,7 @@ const App = () => {
       <Button text='vote' handlerClick={addVote}/>
       <Button text='next anecdote' handlerClick={changeAnecdote}/>
       <Title text='Anecdote with most votes'/>
+      <ShowMostVoted votes={votes} anecdotes={anecdotes}/>
     </div>
   )
 }
@@ -59,8 +60,17 @@ const ShowVotes = ({votes}) => {
     <p>has {votes} votes</p>
   );
 }
-
-
+const ShowMostVoted = ({votes, anecdotes}) =>{
+  const max = Math.max(...votes)
+  const index = votes.indexOf(max)
+  return (
+    <>
+      {anecdotes[index]}
+      <br></br>
+      <ShowVotes votes={votes[index]}/>
+    </>
+  )
+}
 
 
 export default App
