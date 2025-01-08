@@ -1,1 +1,1 @@
-proximamente continuar esto y estimar horas
+proximamente continuar esto y estimar horas, AHORA
