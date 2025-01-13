@@ -7,7 +7,7 @@ const App = (props) => {
       <ul>
         {notes.map(note =>
           <li key={note.id}>
-            {note.content}//continua
+            {note.content}//continua aqui
           </li>
         )}
       </ul>
