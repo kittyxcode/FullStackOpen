@@ -1,9 +1,7 @@
-const Content = (props) =>{
-  console.log('Content props:')
-  console.log(props)
+const Content = ({parts}) =>{
     return(
       <>
-        {props.parts.map(part => 
+        {parts.map(part => 
           <p key={part.id}>
             {part.name} {part.exercises}
           </p>
