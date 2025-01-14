@@ -5,14 +5,11 @@ import Total from './Total'
 
 
 const Course = (props) => {
-    console.log(props)
-    console.log('props.course.name es:')
-    console.log(props.course.name)
     return(
         <>
-        
             <Header course={props.course.name}/>
-            
+            <Content parts={props.course.parts}/>  
+            <Total parts={props.course.parts}/>  
         </>
     )
 }
