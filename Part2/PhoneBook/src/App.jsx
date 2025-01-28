@@ -8,6 +8,7 @@ const App = () => {
 
   return (
     <div>
+      <div>debug: {newName}</div>
       <h2>Phonebook</h2>
       <form>
         <div>
@@ -18,7 +19,7 @@ const App = () => {
         </div>
       </form>
       <h2>Numbers</h2>
-      ...
+      {persons.map(person => <div key={person.name}>{person.name}</div>)}
     </div>
   )
 }
