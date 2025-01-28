@@ -26,13 +26,17 @@ const App = () => {
     }
   }
 
+  const personsToShow = newSearch === ''
+    ? persons
+    : persons.filter(person => person.name.toLowerCase().includes(newSearch.toLowerCase()))
+
   return (
     <div>
       <div>debug: {newName}</div>
       
       <h2>Phonebook</h2>
       <div>
-          Filter Show with: <input value={newNumber} onChange={(e)=> setNewNumber(e.target.value)}/>
+          Filter Show with: <input value={newSearch} onChange={(e)=> setNewSearch(e.target.value)}/>
       </div>
       <form onSubmit={addPerson}>
         <div>
@@ -46,7 +50,7 @@ const App = () => {
         </div>
       </form>
       <h2>Numbers</h2>
-      {persons.map(person => <div key={person.name}>{person.name} {person.number}</div>)}
+      {personsToShow.map(person => <div key={person.name}>{person.name} {person.number}</div>)}
     </div>
   )
 }
