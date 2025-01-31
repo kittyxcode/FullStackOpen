@@ -12,3 +12,4 @@ const Numbers = ({ persons, newSearch }) => {
 }
 
 export default Numbers
+// Compare this snippet from Part2/PhoneBook/src/components/Numbers.jsx:
