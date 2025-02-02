@@ -12,4 +12,4 @@ const Numbers = ({ persons, newSearch }) => {
 }
 
 export default Numbers
-// Compare this snippet from Part2/PhoneBook/src/components/Numbers.jsx:
+// Compare this snippet from Part2/PhoneBook/src/components/Numbers.jsx:das
