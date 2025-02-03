@@ -29,10 +29,6 @@ const App = () => {
     }
   }
 
-  const personsToShow = newSearch === ''
-    ? persons
-    : persons.filter(person => person.name.toLowerCase().includes(newSearch.toLowerCase()))
-
   return (
     <div>
       <div>debug: {newName}</div>
