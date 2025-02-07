@@ -4,4 +4,4 @@ import App from './App'
 
 axios.get('http://localhost:3001/notes').then(response => {
   ReactDOM.createRoot(document.getElementById('root')).render(<App />)
-})//
+})
