@@ -14,7 +14,7 @@ const App = () => {
   
     axios.put(url, changedNote).then(response => {
       setNotes(notes.map(note => note.id !== id ? note : response.data))
-    })/
+    })
   }
 
   const hook = () => {
