@@ -12,7 +12,7 @@ const App = () => {
       setNotes(initialNotes);
     });
   }, []);
-  //avanzar ma;ana
+  //avanzar ma;anaffff
 
   const addNote = (event) => {
     event.preventDefault();
