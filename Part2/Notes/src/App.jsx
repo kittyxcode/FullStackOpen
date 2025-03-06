@@ -11,7 +11,7 @@ const App = () => {
     noteService.getAll().then((initialNotes) => {
       setNotes(initialNotes);
     });
-  }, []);//kkk
+  }, []);
 
   const addNote = (event) => {
     event.preventDefault();
