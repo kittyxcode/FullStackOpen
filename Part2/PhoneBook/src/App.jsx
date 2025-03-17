@@ -22,9 +22,6 @@ const App = () => {
   }
   
   useEffect(hook, [])
-  //continuar con REST
-
-
 
   const addPerson = (event) => {
     event.preventDefault()
