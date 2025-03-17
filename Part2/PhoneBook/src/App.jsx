@@ -42,8 +42,6 @@ const App = () => {
 
   return (
     <div>
-      <div>debug: {newName}</div>
-      
       <h2>Phonebook</h2>
       <Filter newSearch={newSearch} setNewSearch={setNewSearch}/>
       <PersonForm addPerson={addPerson} 
@@ -51,7 +49,6 @@ const App = () => {
                   newNumber={newNumber} 
                   handleNameChange={setNewName}
                   handleNumberChange={setNewNumber}/>
-      <h2>Numbers</h2>
       <Numbers persons={persons} newSearch={newSearch}/>
     </div>
   )
