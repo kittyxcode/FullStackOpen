@@ -19,13 +19,6 @@ const App = () => {
         console.log('promise fulfilled')
         setPersons(initialPersons)
       })
-
-    // axios
-    //   .get('http://localhost:3001/persons')
-    //   .then(response => {
-    //     console.log('promise fulfilled')
-    //     setPersons(response.data)
-    //   })
   }
   
   useEffect(hook, [])
@@ -42,9 +35,13 @@ const App = () => {
         name: newName,
         number: newNumber
       }
-      setPersons(persons.concat(newPerson))
-      setNewName('')
-      setNewNumber('')
+      personsService
+        .create(newPerson)
+        .then(returnedPerson => {
+          setPersons(persons.concat(returnedPerson))
+          setNewName('')
+          setNewNumber('')
+        })
     }
   }
 
