@@ -1,7 +1,9 @@
 const ButtonDelete = ({ onClick }) => {
   return (
-    <button onClick={onClick}>Delete</button>
+    <button type="button" onClick={onClick}>
+      Delete
+    </button>
   );
-}
+};
 
 export default ButtonDelete;
