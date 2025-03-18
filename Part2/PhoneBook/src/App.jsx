@@ -43,6 +43,16 @@ const App = () => {
   }
 
   //crear el delete
+  const deletePerson = (id) => {
+    const person = persons.find(person => person.id === id)
+    if (window.confirm(`Delete ${person.name}?`)) {
+      personsService
+        .deletePerson(id)
+        .then(() => {
+          setPersons(persons.filter(person => person.id !== id))
+        })
+    }
+  }
 
 
 
@@ -55,7 +65,7 @@ const App = () => {
                   newNumber={newNumber} 
                   handleNameChange={setNewName}
                   handleNumberChange={setNewNumber}/>
-      <Numbers persons={persons} newSearch={newSearch}/>
+      <Numbers persons={persons} newSearch={newSearch} handleDelete={deletePerson}/>
     </div>
   )
 }
