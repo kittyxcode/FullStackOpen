@@ -42,6 +42,10 @@ const App = () => {
     }
   }
 
+  //crear el delete
+  
+
+
   return (
     <div>
       <h2>Phonebook</h2>
