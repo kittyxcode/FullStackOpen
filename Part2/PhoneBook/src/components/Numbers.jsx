@@ -1,3 +1,5 @@
+import ButtonDelete from "./ButtonDelete"
+
 const Numbers = ({ persons, newSearch }) => {
     const personsToShow = newSearch === ''
         ? persons
@@ -6,7 +8,7 @@ const Numbers = ({ persons, newSearch }) => {
     return (
         <div>
             <h2>Numbers</h2>
-            {personsToShow.map(person => <div key={person.name}>{person.name} {person.number}</div>)}
+            {personsToShow.map(person => <div key={person.name}>{person.name} {person.number} <ButtonDelete/></div>)}
         </div>
     )
 }
