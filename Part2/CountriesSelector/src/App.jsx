@@ -1,11 +1,11 @@
-
+import InputCountry from './components/InputCountry';
 
 function App() {
   return (
     <div>
-      <h1>App</h1>
+      find countries <InputCountry />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
