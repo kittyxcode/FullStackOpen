@@ -4,12 +4,15 @@ import Filter from './components/Filter'
 import PersonForm from './components/PersonForm'
 import Numbers from './components/Numbers'
 import personsService from './services/persons'
+import Notification from './components/Notification'
+import '../src/index.css';
 
 const App = () => {
   const [persons, setPersons] = useState([]) 
   const [newName, setNewName] = useState('')
   const [newNumber, setNewNumber] = useState('')
   const [newSearch, setNewSearch] = useState('')
+  const [successMessage, setSuccessMessage] = useState('hola')
 
   const hook = () => {
     console.log('effect')
@@ -66,6 +69,7 @@ const App = () => {
   return (
     <div>
       <h2>Phonebook</h2>
+      <Notification message={successMessage}/>
       <Filter newSearch={newSearch} setNewSearch={setNewSearch}/>
       <PersonForm addPerson={addPerson} 
                   newName={newName} 
