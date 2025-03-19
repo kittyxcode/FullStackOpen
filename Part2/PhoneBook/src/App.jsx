@@ -12,7 +12,7 @@ const App = () => {
   const [newName, setNewName] = useState('')
   const [newNumber, setNewNumber] = useState('')
   const [newSearch, setNewSearch] = useState('')
-  const [successMessage, setSuccessMessage] = useState('hola')
+  const [successMessage, setSuccessMessage] = useState('')
 
   const hook = () => {
     console.log('effect')
@@ -69,7 +69,7 @@ const App = () => {
   return (
     <div>
       <h2>Phonebook</h2>
-      <Notification message={successMessage}/>
+      {successMessage && <Notification message={successMessage}/>}
       <Filter newSearch={newSearch} setNewSearch={setNewSearch}/>
       <PersonForm addPerson={addPerson} 
                   newName={newName} 
