@@ -3,7 +3,7 @@ import InputCountry from './components/InputCountry';
 function App() {
   return (
     <div>
-      find countries <InputCountry />
+      find countries:  <InputCountry />
     </div>
   );
 }
