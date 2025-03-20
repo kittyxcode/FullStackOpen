@@ -4,12 +4,15 @@ const InputCountry = ({ value, onChange, countriesTotal }) => {
   if (countriesTotal.length === 1) {
     return (
       <div>
-        <input
-          type="text"
-          value={value}
-          onChange={onChange}
-          placeholder="Type a country"
-        />
+        <label>
+          Select country:
+          <input
+            type="text"
+            value={value}
+            onChange={onChange}
+            placeholder="Type a country"
+          />
+        </label>
         <h2>{countriesTotal[0].name.common}</h2>
         <p>capital {countriesTotal[0].capital}</p>
         <p>population {countriesTotal[0].population}</p>
@@ -31,12 +34,15 @@ const InputCountry = ({ value, onChange, countriesTotal }) => {
   if (countriesTotal.length > 1) {
     return (
       <div>
-        <input
-          type="text"
-          value={value}
-          onChange={onChange}
-          placeholder="Type a country"
-        />
+        <label>
+          Select country:
+          <input
+            type="text"
+            value={value}
+            onChange={onChange}
+            placeholder="Type a country"
+          />
+        </label>
         <ul>
           {countriesTotal.map((country, index) => (
             <li key={index}>{country.name.common}</li>
@@ -47,12 +53,15 @@ const InputCountry = ({ value, onChange, countriesTotal }) => {
   }
 
   return (
-    <input
-      type="text"
-      value={value}
-      onChange={onChange}
-      placeholder="Type a country"
-    />
+    <label>
+      Select country:
+      <input
+        type="text"
+        value={value}
+        onChange={onChange}
+        placeholder="Type a country"
+      />
+    </label>
   );
 };
 

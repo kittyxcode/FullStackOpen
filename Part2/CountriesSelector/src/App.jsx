@@ -25,7 +25,6 @@ function App() {
 
   return (
     <div>
-      find countries:
       <InputCountry
         value={filterValue}
         onChange={handleFilterChange}
