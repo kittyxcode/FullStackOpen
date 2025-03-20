@@ -1,6 +1,7 @@
 const InputCountry = ({ value, onChange, countriesTotal }) => {
   console.log(countriesTotal);
-  if(countriesTotal.length === 1) {
+
+  if (countriesTotal.length === 1) {
     return (
       <div>
         <input
@@ -27,6 +28,23 @@ const InputCountry = ({ value, onChange, countriesTotal }) => {
     );
   }
 
+  if (countriesTotal.length > 1) {
+    return (
+      <div>
+        <input
+          type="text"
+          value={value}
+          onChange={onChange}
+          placeholder="Type a country"
+        />
+        <ul>
+          {countriesTotal.map((country, index) => (
+            <li key={index}>{country.name.common}</li>
+          ))}
+        </ul>
+      </div>
+    );
+  }
 
   return (
     <input
