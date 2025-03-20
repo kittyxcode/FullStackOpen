@@ -1,11 +1,17 @@
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 
 import InputCountry from './components/InputCountry';
-//import { getAll, getOne } from './services/countries';
+import countries from './services/countries';
 
 
 function App() {
-  const [countries, setCountries] = useState([]);
+  const [countriesData, setCountriesData] = useState([]);
+  useEffect(() => {
+    countries.getAll().then((initialCountries) => {
+      setCountriesData(initialCountries);
+    });
+  }
+  , []);
 
 
   return (
