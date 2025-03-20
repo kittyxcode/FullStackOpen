@@ -45,7 +45,7 @@ const InputCountry = ({ value, onChange, countriesTotal }) => {
         </label>
         <ul>
           {countriesTotal.map((country, index) => (
-            <li key={index}>{country.name.common}</li>
+            <li key={index}>{country.name.common} <button>Show</button></li>
           ))}
         </ul>
       </div>
