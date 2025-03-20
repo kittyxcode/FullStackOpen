@@ -1,3 +1,5 @@
+import ShowButton from "./ShowButton";
+
 const InputCountry = ({ value, onChange, countriesTotal }) => {
   console.log(countriesTotal);
 
@@ -45,7 +47,10 @@ const InputCountry = ({ value, onChange, countriesTotal }) => {
         </label>
         <ul>
           {countriesTotal.map((country, index) => (
-            <li key={index}>{country.name.common} <button>Show</button></li>
+            <li key={index}>
+              {country.name.common}
+              <ShowButton/> 
+            </li>
           ))}
         </ul>
       </div>
