@@ -23,7 +23,7 @@ function App() {
     setCountriesToShow(filteredCountries);
   };
 
-  //construir el handler para ShowButton...
+  //construir el handler para ShowButton......
 
   return (
     <div>
