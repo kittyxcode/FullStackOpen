@@ -1,9 +1,17 @@
+import axios from 'axios';
+
+
 const apiWater = {
-  async getWaterData() {
-    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}`);
-    const data = await response.json();
-    return data;
+  async getWaterData(lat, lon, apiKey) {
+    try {
+        const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`);
+        return response.data;
+    }
+    catch (error) {
+      console.error('Error in getWaterData:', error);
+      return null;
+    }
   }
-};
+}
 
 export default apiWater;
