@@ -1,6 +1,6 @@
-import ShowButton from "./ShowButton";
+import ShowButton from './ShowButton';
 
-const InputCountry = ({ value, onChange, countriesTotal }) => {
+const InputCountry = ({ value, onChange, countriesTotal, onShowCountry }) => {
   console.log(countriesTotal);
 
   if (countriesTotal.length === 1) {
@@ -49,7 +49,7 @@ const InputCountry = ({ value, onChange, countriesTotal }) => {
           {countriesTotal.map((country, index) => (
             <li key={index}>
               {country.name.common}
-              <ShowButton/> 
+              <ShowButton onClick={() => onShowCountry(country)} />
             </li>
           ))}
         </ul>

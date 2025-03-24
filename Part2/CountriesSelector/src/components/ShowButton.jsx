@@ -1,9 +1,5 @@
 const ShowButton = ({ onClick }) => {
-  return (
-    <button type="button" onClick={onClick}>
-      Show
-    </button>
-  );
-}
+  return <button onClick={onClick}>Show</button>;
+};
 
 export default ShowButton;
