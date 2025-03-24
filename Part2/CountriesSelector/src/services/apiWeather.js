@@ -1,6 +1,5 @@
 import axios from 'axios';
 
-
 const apiWater = {
   async getWaterData(lat, lon, apiKey) {
     try {
