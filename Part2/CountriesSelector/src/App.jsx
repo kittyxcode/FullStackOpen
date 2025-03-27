@@ -15,6 +15,8 @@ function App() {
     });
   }, []);
 
+  //debo avanzar con 2.20
+
   const handleFilterChange = (event) => {
     const value = event.target.value;
     setFilterValue(value);
