@@ -15,7 +15,7 @@ function App() {
     });
   }, []);
 
-  //debo avanzar con 2.20
+  //debo avanzar con 2.20//depre
 
   const handleFilterChange = (event) => {
     const value = event.target.value;
