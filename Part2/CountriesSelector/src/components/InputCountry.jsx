@@ -29,6 +29,7 @@ const InputCountry = ({ value, onChange, countriesTotal, onShowCountry }) => {
           alt={countriesTotal[0].name.common}
           width="100"
         />
+        <h3>Weather in {countriesTotal[0].capital}</h3>
       </div>
     );
   }
