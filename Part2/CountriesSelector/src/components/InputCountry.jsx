@@ -1,8 +1,11 @@
 import ShowButton from './ShowButton';
+import { useEffect } from 'react';
 
 const InputCountry = ({ value, onChange, countriesTotal, onShowCountry }) => {
-  console.log(countriesTotal);
 
+  useEffect(()=>{
+    
+  }, [countriesTotal]);
   if (countriesTotal.length === 1) {
     return (
       <div>
