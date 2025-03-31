@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react';
 import InputCountry from './components/InputCountry';
 import countries from './services/countries';
+const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
 
 function App() {
   const [countriesData, setCountriesData] = useState([]);
   const [countriesToShow, setCountriesToShow] = useState([]);
   const [filterValue, setFilterValue] = useState('');
   const [selectedCountry, setSelectedCountry] = useState(null);
+  //console.log(API_KEY);
 
   useEffect(() => {
     countries.getAll().then((initialCountries) => {
