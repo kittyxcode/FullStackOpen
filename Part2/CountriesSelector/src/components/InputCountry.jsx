@@ -1,12 +1,14 @@
 import ShowButton from './ShowButton';
 import { useState, useEffect } from 'react';
 import apiWater from '../services/apiWeather';
+import imgWather from '../services/ImgWather';
 
 
 const InputCountry = ({ value, onChange, countriesTotal, onShowCountry }) => {
 
   const [temp, setTemp] = useState(null);
   const [weatherIcon, setWeatherIcon] = useState(null);
+
 
   useEffect(() => {
     if(countriesTotal.length === 1) {
@@ -31,7 +33,26 @@ const InputCountry = ({ value, onChange, countriesTotal, onShowCountry }) => {
     }
   }
   , [countriesTotal]);
+
+  useEffect(() => {
+    if (weatherIcon) {
+      imgWather.getImgData(weatherIcon)
+        .then((data) => {
+          if (data) {
+            const url = URL.createObjectURL(data);
+            setWeatherIcon(url);
+          } else {
+            console.error('No weather icon available');
+          }
+        })
+        .catch((error) => {
+          console.error('Error fetching weather icon:', error);
+        });
+    }
+  }, [weatherIcon]);
   
+      
+
   
   if (countriesTotal.length === 1) {
     return (
@@ -61,6 +82,7 @@ const InputCountry = ({ value, onChange, countriesTotal, onShowCountry }) => {
         />
         <h3>Weather in {countriesTotal[0].capital}</h3>
         <p>Temperature {temp} Celsius</p>
+
       </div>
     );
   }
