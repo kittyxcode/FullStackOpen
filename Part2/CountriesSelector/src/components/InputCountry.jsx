@@ -1,10 +1,29 @@
 import ShowButton from './ShowButton';
-//import { useEffect } from 'react';
+import { useEffect } from 'react';
+import apiWater from '../services/apiWeather';
 
 
 const InputCountry = ({ value, onChange, countriesTotal, onShowCountry }) => {
 
-
+  useEffect(() => {
+    if(countriesTotal.length === 1) {
+      const country = countriesTotal[0];
+      const lat = country.latlng[0];
+      const lon = country.latlng[1];
+      apiWater.getWaterData(lat, lon)
+        .then((data) => {
+          if (data) {
+            console.log('Weather data:', data);
+          } else {
+            console.error('No weather data available');
+          }
+        })
+        .catch((error) => {
+          console.error('Error fetching weather data:', error);
+        });
+    }
+  }
+  , [countriesTotal]);
   
   
   if (countriesTotal.length === 1) {
