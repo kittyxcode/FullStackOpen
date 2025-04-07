@@ -23,8 +23,6 @@ const InputCountry = ({ value, onChange, countriesTotal, onShowCountry }) => {
             setTemp(data.main.temp - 273.15);
             setWeatherIcon(data.weather[0].icon);
             setWind(data.wind.speed);
-            console.log('Weather icon:', data.weather[0].icon);
-            console.log('Weather data:', data.main.temp);
           } else {
             console.error('No weather data available');
           }
