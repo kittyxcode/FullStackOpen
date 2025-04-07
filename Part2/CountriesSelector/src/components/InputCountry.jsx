@@ -1,9 +1,11 @@
 import ShowButton from './ShowButton';
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import apiWater from '../services/apiWeather';
 
 
 const InputCountry = ({ value, onChange, countriesTotal, onShowCountry }) => {
+
+  const [temp, setTemp] = useState(null);
 
   useEffect(() => {
     if(countriesTotal.length === 1) {
@@ -14,6 +16,8 @@ const InputCountry = ({ value, onChange, countriesTotal, onShowCountry }) => {
         .then((data) => {
           if (data) {
             console.log('Weather data:', data);
+            setTemp(data.main.temp);
+            console.log('Weather data:', data.main.temp);
           } else {
             console.error('No weather data available');
           }
@@ -53,6 +57,7 @@ const InputCountry = ({ value, onChange, countriesTotal, onShowCountry }) => {
           width="100"
         />
         <h3>Weather in {countriesTotal[0].capital}</h3>
+        <p>Temperature {temp}</p>
       </div>
     );
   }
