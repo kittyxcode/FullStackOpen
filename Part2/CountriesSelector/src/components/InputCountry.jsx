@@ -67,9 +67,9 @@ const InputCountry = ({ value, onChange, countriesTotal, onShowCountry }) => {
           />
         </label>
         <h2>{countriesTotal[0].name.common}</h2>
-        <p>capital {countriesTotal[0].capital}</p>
-        <p>population {countriesTotal[0].population}</p>
-        <h3>languages</h3>
+        <p>Capital {countriesTotal[0].capital}</p>
+        <p>Population {countriesTotal[0].population}</p>
+        <h3>Languages</h3>
         <ul>
           {Object.values(countriesTotal[0].languages).map((language, index) => {
             return <li key={index}>{language}</li>;
