@@ -16,7 +16,7 @@ const InputCountry = ({ value, onChange, countriesTotal, onShowCountry }) => {
         .then((data) => {
           if (data) {
             console.log('Weather data:', data);
-            setTemp(data.main.temp);
+            setTemp(data.main.temp - 273.15);
             console.log('Weather data:', data.main.temp);
           } else {
             console.error('No weather data available');
@@ -57,7 +57,7 @@ const InputCountry = ({ value, onChange, countriesTotal, onShowCountry }) => {
           width="100"
         />
         <h3>Weather in {countriesTotal[0].capital}</h3>
-        <p>Temperature {temp}</p>
+        <p>Temperature {temp} Celsius</p>
       </div>
     );
   }
