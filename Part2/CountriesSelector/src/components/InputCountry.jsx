@@ -6,6 +6,7 @@ import apiWater from '../services/apiWeather';
 const InputCountry = ({ value, onChange, countriesTotal, onShowCountry }) => {
 
   const [temp, setTemp] = useState(null);
+  const [weatherIcon, setWeatherIcon] = useState(null);
 
   useEffect(() => {
     if(countriesTotal.length === 1) {
@@ -17,6 +18,8 @@ const InputCountry = ({ value, onChange, countriesTotal, onShowCountry }) => {
           if (data) {
             console.log('Weather data:', data);
             setTemp(data.main.temp - 273.15);
+            setWeatherIcon(data.weather[0].icon);
+            console.log('Weather icon:', data.weather[0].icon);
             console.log('Weather data:', data.main.temp);
           } else {
             console.error('No weather data available');
