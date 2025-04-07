@@ -82,6 +82,7 @@ const InputCountry = ({ value, onChange, countriesTotal, onShowCountry }) => {
         />
         <h3>Weather in {countriesTotal[0].capital}</h3>
         <p>Temperature {temp} Celsius</p>
+        <img src={weatherIcon}></img>
 
       </div>
     );
