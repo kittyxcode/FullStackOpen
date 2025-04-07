@@ -8,6 +8,7 @@ const InputCountry = ({ value, onChange, countriesTotal, onShowCountry }) => {
 
   const [temp, setTemp] = useState(null);
   const [weatherIcon, setWeatherIcon] = useState(null);
+  const [wind, setWind] = useState(null);
 
 
   useEffect(() => {
@@ -21,6 +22,7 @@ const InputCountry = ({ value, onChange, countriesTotal, onShowCountry }) => {
             console.log('Weather data:', data);
             setTemp(data.main.temp - 273.15);
             setWeatherIcon(data.weather[0].icon);
+            setWind(data.wind.speed);
             console.log('Weather icon:', data.weather[0].icon);
             console.log('Weather data:', data.main.temp);
           } else {
@@ -83,7 +85,7 @@ const InputCountry = ({ value, onChange, countriesTotal, onShowCountry }) => {
         <h3>Weather in {countriesTotal[0].capital}</h3>
         <p>Temperature {temp} Celsius</p>
         <img src={weatherIcon}></img>
-
+        <p>Wind {wind} m/s</p>
       </div>
     );
   }
