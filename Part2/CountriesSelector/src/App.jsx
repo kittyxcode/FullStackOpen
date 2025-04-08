@@ -17,6 +17,11 @@ function App() {
     });
   }, []);
 
+  useEffect(() => {
+    console.log('hola');
+    
+  }, [selectedCountry]);
+
   //debo avanzar con 2.20//depre
 
   const handleFilterChange = (event) => {
@@ -58,6 +63,7 @@ function App() {
             alt={selectedCountry.name.common}
             width="100"
           />
+          <p>bal bla</p>
         </div>
       )}
     </div>
