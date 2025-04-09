@@ -8,7 +8,7 @@ function App() {
   const [countriesToShow, setCountriesToShow] = useState([]);
   const [filterValue, setFilterValue] = useState('');
   const [selectedCountry, setSelectedCountry] = useState(null);
-  //console.log(API_KEY);
+  console.log('selectedCountry', selectedCountry);
 
   useEffect(() => {
     countries.getAll().then((initialCountries) => {
@@ -18,11 +18,11 @@ function App() {
   }, []);
 
   useEffect(() => {
-    console.log('hola');
-    
+    console.log('holaddd');
+
   }, [selectedCountry]);
 
-  //debo avanzar con 2.20//depre
+  //debo avanzar con 2.20//depre//sigue ctm
 
   const handleFilterChange = (event) => {
     const value = event.target.value;
