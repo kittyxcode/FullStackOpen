@@ -8,6 +8,7 @@ const InputCountry = ({ value, onChange, countriesTotal, onShowCountry }) => {
   const [temp, setTemp] = useState(null);
   const [weatherIcon, setWeatherIcon] = useState(null);
   const [wind, setWind] = useState(null);
+  //
 
   useEffect(() => {
     if(countriesTotal.length === 1) {
