@@ -8,7 +8,7 @@ const InputCountry = ({ value, onChange, countriesTotal, onShowCountry }) => {
   const [temp, setTemp] = useState(null);
   const [weatherIcon, setWeatherIcon] = useState(null);
   const [wind, setWind] = useState(null);
-  //..//
+  //..////contiuar con use state para mas de un pasis, y ver si refactoruzo a futuro
 
   useEffect(() => {
     if(countriesTotal.length === 1) {
