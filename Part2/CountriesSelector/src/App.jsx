@@ -13,7 +13,7 @@ function App() {
   useEffect(() => {
     countries.getAll().then((initialCountries) => {
       setCountriesData(initialCountries);
-      //console.log(initialCountries);//
+      //console.log(initialCountries);////
     });
   }, []);
 
